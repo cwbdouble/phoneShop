@@ -1,7 +1,10 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
+		<view class="iconfont icon-guanzhu">
+			
+		</view>
+		<image v-if="show" class="logo animated fadeIn" src="/static/logo.png"></image>
+		<view class="text-area" @click="handleShow">
 			<text class="title">{{title}}</text>
 		</view>
 	</view>
@@ -11,14 +14,17 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				show: false
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-
+			handleShow(){
+				this.show = !this.show;
+			}
 		}
 	}
 </script>
